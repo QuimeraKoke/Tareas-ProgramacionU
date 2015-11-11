@@ -6,5 +6,8 @@ public class Parte2 {
 		// TODO Auto-generated method stub
 
 	}
+	public static void descomprimir(String texto, String arbol){
+		
+	}
 
 }

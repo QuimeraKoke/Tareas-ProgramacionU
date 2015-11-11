@@ -1,7 +1,8 @@
 package Gutierrez_Jorge;
 
-public class TextoComprimido {
-	public static final String abc = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,;:?!-/’";
-	String comprimido;
-	String arbol;
+class TextoComprimido{
+    // Objeto que tendra toda la informacion
+    // de un texto comprimido
+    String comprimido; //Texto comprimido
+    String arbol; // String del arbol usado para comprimir
 }
