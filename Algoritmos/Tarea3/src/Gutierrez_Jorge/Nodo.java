@@ -11,13 +11,11 @@ public class Nodo {
 		this.content=palabra;
 	}
 	public String print(){ 
-		String a = this.content;
-		System.out.print(this.content);
+		String a=this.content;
 		if (this.izq != null){
-			a.concat(this.izq.print());
-			a.concat(this.der.print());
+			a=a+this.izq.print();
+			a=a+this.der.print();
 		}
-		System.out.println(a);
 		return a;
 	}
 	public void show(){

@@ -1,9 +1,24 @@
 package Gutierrez_Jorge;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 public class Parte1 {
 	public static final String abc = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.,;:?!-/’";
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		comprimir("Hola");
+	public static void main(String[] args) throws IOException 
+	{
+		BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+		String input;
+		String output ="" ;
+		
+		while ( (input=in.readLine () )!=null)
+			if(input.trim().length() == 0)
+				output += "\n";
+			else
+				output += comprimir(input)+ "\n";
+
+		System.out.print(output);
+		System.out.flush ();
+		in.close ();
 	}
 
 	public static TextoComprimido comprimir(String texto){
@@ -21,11 +36,7 @@ public class Parte1 {
 			temp = new Estructura();
 			pos++;
 		}
-		for (int i =0;i<len;i++){
-			if(lista[i]!=null){
-			System.out.println(((Estructura)lista[i]).count+"---"+((Estructura)lista[i]).letra);
-			}
-		}
+		
 		System.out.println();
 		pos--;
 		boolean state = true;
@@ -36,12 +47,7 @@ public class Parte1 {
 			index=min(lista);
 			tempEst = (Estructura)lista[index];
 			lista[index]=null;
-			System.out.println(index);
-			for (int i =0;i<len;i++){
-				if(lista[i]!=null){
-				System.out.println(((Estructura)lista[i]).count+"---"+((Estructura)lista[i]).letra);
-				}
-			}
+
 			if(tempEst.count>=headNodo.peso){
 				if(headNodo.peso==0){
 					headNodo.peso=tempEst.count;
@@ -54,16 +60,13 @@ public class Parte1 {
 					tempNodo = new Nodo(tempEst.count,tempEst.letra);
 					headNodo.der=tempNodo;
 					tempNodo = null;
-					System.out.println(headNodo.content + " - "+headNodo.peso);
-					System.out.println(headNodo.izq.content + " - "+headNodo.izq.peso);
-					System.out.println(headNodo.der.content + " - "+headNodo.der.peso);
+					
 				}
 			}
 			else{
 				Nodo temphead=new Nodo(tempEst.count,tempEst.letra);
 				while(temphead.peso<headNodo.peso){
 					index=min(lista);
-					System.out.println(index);
 					tempEst = (Estructura)lista[index];
 					lista[index]=null;
 					if(tempEst.count>=temphead.peso){
@@ -81,9 +84,11 @@ public class Parte1 {
 			}
 			state=check(lista);
 		}
-		print(headNodo);
-		System.out.println(print(headNodo));
-		Preorden(headNodo);
+		resp.comprimido=headNodo.print();
+		resp.arbol=Preorden(headNodo);
+		System.out.println(resp.comprimido);
+		System.out.println(resp.arbol);
+		System.out.println();
 		return resp;
 	}
 	private static int count(String text, char compare){
@@ -118,24 +123,25 @@ public class Parte1 {
 		}
 		return resp;
 	}
-	public static String print(Nodo nodo){ 
-		String a = nodo.content;
-		System.out.print(nodo.content);
-		if (nodo.izq != null){
-			a.concat(nodo.izq.print());
-			a.concat(nodo.der.print());
-		}
-		System.out.println(a);
-		return a;
-	}
-	private static void Preorden(Nodo nodo)
+//	public String print(Nodo nodo){ 
+//		String a = nodo.content;
+//		System.out.print(nodo.content);
+//		if (nodo.izq != null){
+//			a.concat(this.izq.print());
+//			a.concat(this.der.print());
+//		}
+//		System.out.println(a);
+//		return a;
+//	}
+	private static String Preorden(Nodo nodo)
     {
-        if(nodo == null)
-            return;
-         
-        System.out.print(0);     //mostrar datos del nodo
-        Preorden(nodo.izq);//recorre subarbol izquierdo
-        System.out.print(1);
-        Preorden(nodo.der);     //recorre subarbol derecho
+		String a=""; 
+		if (nodo.izq != null){
+			a=a+"0";     //mostrar datos del nodo
+			a+=Preorden(nodo.izq);//recorre subarbol izquierdo
+			a+="1";
+			a+=Preorden(nodo.der);     //recorre subarbol derecho
+    }
+		return a;
     }
 }
