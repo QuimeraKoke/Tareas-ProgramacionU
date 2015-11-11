@@ -82,7 +82,7 @@ public class Parte1 {
 			state=check(lista);
 		}
 		print(headNodo);
-		System.out.println(print(headNodo););
+		System.out.println(print(headNodo));
 		Preorden(headNodo);
 		return resp;
 	}
