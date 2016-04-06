@@ -3,18 +3,14 @@ body{
 	background-color: #48a737;
 }
 
-ul{
-	list-style: none;
-}
-
-p,h1,h2,h3{
+p,h1,h2,h3,label{
 	text-align: center;
 }
 
 
 /*HEADER*/
 header{
-	margin: 0;
+	margin: 0 0 30px 0;
 	background-color: #2f6e24;
 }
 header h1{
@@ -23,48 +19,44 @@ header h1{
 }
 
 header a{
-	display: : block;
-	text-decoration: none
+	display: inline-block;
+	text-decoration: none;
+	margin: 5px 5px;
+	padding: 0 10px;
+	color: #d8df2e;
+	line-height: 0;
+	border-radius: 10px;
+}
+
+#selected-page{
+	font-size: 1.75em;
 }
 
 /* "BODY" */
-li{
-	height: 35%;
-}
 
-li div{
-	height: 90%;
-}
-
-/* Basic Information */
-.left-info{
-	width: 20%;
-	margin: 0 2.5%;
+/* Card */
+.card{
+	width: 30%;
+	margin: 1% 1%;
 	display: inline-block;
+	background-color: #204e25;
+	border-radius: 5px;
+	padding: 10px 5px;
+	margin: 20px 10px;
+	vertical-align: top;
 }
 
-.left-info img {
+.card img {
 	display:block;
     margin:auto;
-	max-width: 100%;
+	max-width: 90%;
 	max-height: 80%;
 }
 
-/*Description*/
-
-.center-info {
-	width: 30%;
-	margin: 0 2.5%;
-	display: inline-block;
+.card p{
+	 word-break: break-all;
 }
 
-/*Location Information*/
-
-.right-info{
-	width: 20%;
-	margin: 0 2.5%;
-	display: inline-block;
-}
 
 .preview-image{
 	max-height: 120px;
