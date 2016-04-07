@@ -7,14 +7,11 @@
 		
 		<!-- CSS normalizer -->
 		<link rel="stylesheet" href="css/normalize.css">
-
 		<!-- My CSS -->
 		<link rel="stylesheet" href="css/style.css">
-
-		<!-- 
-		CSS End 
+		<!--
+		CSS End
 		-->
-
 	</head>
 	<body>
 		<header>
@@ -31,9 +28,51 @@
 			</a>
 		</header>
 		
+		<h2>Ingresa los datos de tu planta</h2>
+		<div class="wrap">
+			<form action="">
+				<h3>Nombre</h3>
+				<input type="text" maxlength="80" required placeholder="Nombre">
+				<br>
+				<h3>Tipo de Planta</h3>
+				<select name="Tipo de Planta" required>
+					<option value="0">arbol</option>
+					<option value="1">arbusto</option>
+					<option value="2">mata</option>
+					<option value="3">hierba</option>
+					<option value="4">otro</option>
+				</select>
+				<br>
+				<h3>Descripcion</h3>
+				<textarea name="" id="" cols="60" rows="10" maxlength="1000" requiered placeholder="Descripcion..."></textarea>
+				<br>
+				<h3>Intercambio</h3>
+				<textarea name="" id="" cols="60" rows="10" maxlength="400" requiered placeholder="Me gustaria cambiar mi planta por..."></textarea>
+				<br>
+				<h3>Imagenes</h3>
+				<input type="file" requiered name="pic" accept="image/*">
+				<br>
+				<input type="file" name="pic" accept="image/*">
+				<br>
+				<input type="file" name="pic" accept="image/*">
+				<br>
+				<input type="file" name="pic" accept="image/*">
+				<br>
+				<input type="file" name="pic" accept="image/*">
+				<br>
+				<h3>
+					Contacto
+				</h3>
+				<input type="email" requiered maxlength="100" placeholder="Email">
+				<br>
+				<input type="tel" requiered maxlength="20" placeholder="Telefono">
+				<br>
+				<input type="submit" value="Listo!">
+			</form>
+		</div>
 		
 		<footer>
-			<h3>A World without Zombies</h2>
+			<h3>A World without Zombies</h3>
 			<a href="https://twitter.com/PlantsvsZombies"><img src="img/twitter-logo.png"></a>
 		</footer>
 		<!-- <img class="preview-image" src="img/bellsprout.png">
